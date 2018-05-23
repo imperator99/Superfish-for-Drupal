@@ -10,7 +10,10 @@
  * Dual licensed under the MIT and GPL licenses:
  *  http://www.opensource.org/licenses/mit-license.php
  *  http://www.gnu.org/licenses/gpl.html
-  */
+ *
+ * This is a forked version specifically for the DTA website to resolve some
+ * accessibility issues with the Superfish for Drupal library.
+ */
 
 (function($){
   $.fn.sfsmallscreen = function(options){
@@ -138,7 +141,7 @@
           // Doing the same and making sure all the sub-menus are off-screen (hidden).
           accordion.children('ul').removeAttr('style').not('.sf-hidden').addClass('sf-hidden');
           // Creating the accordion toggle switch.
-          var toggle = '<div class="sf-accordion-toggle ' + styleClass + '"><a href="#" id="' + toggleID + '"><span>' + options.title + '</span></a></div>';
+          var toggle = '<div class="sf-accordion-toggle ' + styleClass + '"><button href="#" id="' + toggleID + '"><span>' + options.title + '</span></button></div>';
 
           // Adding Expand\Collapse buttons if requested.
           if (options.accordionButton == 2){
