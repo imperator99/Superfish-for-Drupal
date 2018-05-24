@@ -16,6 +16,6 @@
   ],
   "license": "MIT",
   "replace": {
-    "mehrpadin/superfish": "2.0"
+    "mehrpadin/superfish": "~2.0"
   }
 }
