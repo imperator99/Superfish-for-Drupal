@@ -141,7 +141,7 @@
           // Doing the same and making sure all the sub-menus are off-screen (hidden).
           accordion.children('ul').removeAttr('style').not('.sf-hidden').addClass('sf-hidden');
           // Creating the accordion toggle switch.
-          var toggle = '<div class="sf-accordion-toggle ' + styleClass + '"><button href="#" id="' + toggleID + '"><span>' + options.title + '</span></button></div>';
+          var toggle = '<div class="sf-accordion-toggle ' + styleClass + '"><button class="au-btn au-btn--dark au-btn--block au-btn--tertiary" aria-haspopup="true" aria-controls="' + accordionID + '" id="' + toggleID + '"><span>' + options.title + '</span></button></div>';
 
           // Adding Expand\Collapse buttons if requested.
           if (options.accordionButton == 2){
@@ -165,7 +165,7 @@
             // Preventing the click.
             e.preventDefault();
             // Adding the sf-expanded class.
-            $(this).toggleClass('sf-expanded');
+            $(this).toggleClass('sf-expanded').removeAttr('aria-expanded');
 
             if (accordionElement.hasClass('sf-expanded')){
               // If the accordion is already expanded:
@@ -185,6 +185,7 @@
             else {
               // But if it's collapsed,
               accordionElement.addClass('sf-expanded').hide().removeClass('sf-hidden').show();
+              $('#' + toggleID).attr('aria-expanded', true);
             }
           });
 
