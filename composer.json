@@ -14,5 +14,8 @@
     "plugin",
     "jquery"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "replace": {
+    "mehrpadin/superfish": "2.0"
+  }
 }
